@@ -3,32 +3,42 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #3d3d3d;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
   <children>
-      <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: gray;">
+      <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #464646;">
          <children>
-            <TextField fx:id="textfield_mail" prefWidth="250.0" promptText="mail">
+            <TextField fx:id="textfield_mail" prefHeight="20.0" prefWidth="300.0" promptText="mail">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
             </TextField>
-            <TextField fx:id="textfield_pass" prefWidth="250.0" promptText="pass">
+            <TextField fx:id="textfield_pass" prefHeight="20.0" prefWidth="300.0" promptText="pass">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Verdana Bold" size="15.0" />
+               </font>
             </TextField>
-            <Button mnemonicParsing="false" prefWidth="250.0" style="-fx-background-color: #5900ff;" text="Login" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" style="-fx-background-color: #5900ff;" text="Login" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="50.0" top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
             </Button>
          </children>
          <VBox.margin>
             <Insets left="300.0" right="300.0" />
          </VBox.margin>
          <padding>
-            <Insets bottom="200.0" top="200.0" />
+            <Insets bottom="200.0" top="100.0" />
          </padding>
       </VBox>
    </children>
