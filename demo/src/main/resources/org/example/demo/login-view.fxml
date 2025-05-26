@@ -9,7 +9,7 @@
   <children>
       <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #464646;">
          <children>
-            <TextField fx:id="textfield_mail" prefHeight="20.0" prefWidth="300.0" promptText="mail">
+            <TextField fx:id="id_mail" prefHeight="20.0" prefWidth="300.0" promptText="mail">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -17,7 +17,7 @@
                   <Font name="Verdana Bold" size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="textfield_pass" prefHeight="20.0" prefWidth="300.0" promptText="pass">
+            <TextField fx:id="id_pass" prefHeight="20.0" prefWidth="300.0" promptText="pass">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -25,7 +25,7 @@
                   <Font name="Verdana Bold" size="15.0" />
                </font>
             </TextField>
-            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" style="-fx-background-color: #5900ff;" text="Login" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" style="-fx-background-color: #5900ff;" text="Login" textFill="WHITE" onAction="#login">
                <VBox.margin>
                   <Insets bottom="50.0" top="10.0" />
                </VBox.margin>
