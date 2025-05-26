@@ -3,7 +3,9 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import org.example.demo.Conexion;
+import models.Usuario;
+import org.example.demo.BBDD;
+import org.example.demo.SceneManager;
 
 public class LoginController {
     @FXML
@@ -13,8 +15,11 @@ public class LoginController {
     private TextField id_pass;
 
     @FXML
-    public void login(ActionEvent event) {
-        String mail = id_mail.getText();
-        String pass = id_pass.getText();
+    public void login(ActionEvent event) throws InterruptedException {
+        Usuario user = new Usuario(id_mail.getText(), id_pass.getText());
+
+        if (BBDD.login(user)) {
+            SceneManager.canviarEscena("/org/example/demo/menu-view.fxml", "Menu", event);
+        }
     }
 }

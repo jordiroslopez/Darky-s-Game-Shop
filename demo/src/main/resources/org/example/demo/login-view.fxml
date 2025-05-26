@@ -17,15 +17,15 @@
                   <Font name="Verdana Bold" size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="id_pass" prefHeight="20.0" prefWidth="300.0" promptText="pass">
+            <PasswordField fx:id="id_pass" prefHeight="20.0" prefWidth="300.0" promptText="pass">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
                <font>
                   <Font name="Verdana Bold" size="15.0" />
                </font>
-            </TextField>
-            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" style="-fx-background-color: #5900ff;" text="Login" textFill="WHITE" onAction="#login">
+            </PasswordField>
+            <Button mnemonicParsing="false" onAction="#login" prefHeight="20.0" prefWidth="300.0" style="-fx-background-color: #5900ff;" text="Login" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="50.0" top="10.0" />
                </VBox.margin>
