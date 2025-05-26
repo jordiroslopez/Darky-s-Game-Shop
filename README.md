@@ -1,1 +1,2 @@
-Darky's Games Shop
+# Darky's Games Shop 🎮
+CREADO POR: Jordi Ros López
