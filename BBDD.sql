@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS Usuario;
 
 CREATE TABLE Categoria (
     id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50)
+    nombre_categoria VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE Videojuego (
@@ -30,7 +30,7 @@ CREATE TABLE Videojuego_Categoria (
 
 CREATE TABLE Usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50),
+    nombre_usuario VARCHAR(50),
     contrasenya VARCHAR(50),
     email VARCHAR(50)
 );
@@ -42,3 +42,31 @@ CREATE TABLE Usuario_Videojuego (
     CONSTRAINT FK1_Usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
     CONSTRAINT FK2_Videojuego FOREIGN KEY (id_videojuego) REFERENCES Videojuego(id_videojuego)
 );
+
+INSERT INTO Videojuego (nombre_videojuego, precio) VALUES
+("Portal 2", 9.75);
+
+INSERT INTO Categoria (nombre_categoria) VALUES
+("Plataformas"),
+("Puzles"),
+("Primera persona"),
+("Divertidos");
+
+INSERT INTO Videojuego_Categoria VALUES
+(1, 1), -- Portal 2 | Plataformas
+(1, 2), -- Portal 2 | Puzles
+(1, 3), -- Portal 2 | Primera Persona
+(1, 4), -- Portal 2 | Divertidos
+
+INSERT INTO Usuario (nombre_usuario, contrasenya, email) VALUES
+("Darky485", "aF2840303", "jorgex1412@gmail.com");
+
+INSERT INTO Usuario_Videojuego VALUES (1, 1); -- Darky485 | Portal 2
+
+/*
+ALTER TABLE categoria AUTO_INCREMENT = 1;
+ALTER TABLE videojuego AUTO_INCREMENT = 1;
+ALTER TABLE usuario AUTO_INCREMENT = 1;
+ALTER TABLE videojuego_categoria AUTO_INCREMENT = 1;
+ALTER TABLE usuario_videojuego AUTO_INCREMENT = 1;
+*/
