@@ -6,7 +6,7 @@ import javafx.scene.layout.FlowPane;
 
 import java.util.List;
 
-public class MenuController {
+public class TiendaController {
     @FXML
     public void initialize() {
         List<String> items = List.of("Juego 1", "Juego 2", "Juego 3", "Juego 4", "Juego 5", "Juego 6", "Juego 7");

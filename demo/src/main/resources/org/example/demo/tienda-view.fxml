@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #040404;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TiendaController">
+   <children>
+      <Pane prefHeight="100.0" style="-fx-background-color: #313131;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="80.0" layoutX="62.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox>
+         <children>
+            <VBox prefHeight="500.0" style="-fx-background-color: #313131;">
+               <children>
+                  <Button mnemonicParsing="false" prefWidth="200.0" text="Biblioteca" />
+                  <Button mnemonicParsing="false" prefWidth="200.0" text="Tienda" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -19,7 +19,7 @@ public class LoginController {
         Usuario user = new Usuario(id_mail.getText(), id_pass.getText());
 
         if (BBDD.login(user)) {
-            SceneManager.canviarEscena("/org/example/demo/menu-view.fxml", "Menu", event);
+            SceneManager.canviarEscena("/org/example/demo/tienda-view.fxml", "Tienda", event);
         }
     }
 }
