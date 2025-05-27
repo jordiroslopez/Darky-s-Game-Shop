@@ -1,0 +1,9 @@
+.boton-personalizado {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
+
+.boton-personalizado:hover {
+    -fx-background-color: #2196F3; /* azul */
+    -fx-text-fill: white;
+}

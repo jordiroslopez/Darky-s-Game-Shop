@@ -17,10 +17,10 @@
       </Pane>
       <HBox>
          <children>
-            <VBox prefHeight="500.0" style="-fx-background-color: #313131;">
+            <VBox prefHeight="500.0" style="-fx-background-color: #232323;">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="200.0" text="Biblioteca" />
-                  <Button mnemonicParsing="false" prefWidth="200.0" text="Tienda" />
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" text="Biblioteca" textFill="#a100ff" styleClass="boton-personalizado"/>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" text="Tienda" textFill="#a100ff" />
                </children>
             </VBox>
          </children>
