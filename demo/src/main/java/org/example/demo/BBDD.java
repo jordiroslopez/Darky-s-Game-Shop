@@ -18,7 +18,6 @@ public class BBDD {
 
         try {
             conexion = DriverManager.getConnection(url, root, pass);
-            System.out.println("Conexion establecida");
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
             sleep(100);
@@ -44,6 +43,9 @@ public class BBDD {
                     String contrasena = rs.getString("contrasena");
                     String email = rs.getString("email");
                     UserSesion.setUser(new Usuario(id_usuario, nombreUsuario, contrasena, email));
+                    return true;
+                } else {
+                    return false;
                 }
             } catch (SQLException sqe) {
                 System.err.println(sqe.getMessage());
