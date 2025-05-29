@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #040404FF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TiendaController">
+<VBox prefHeight="1200.0" prefWidth="1800.0" style="-fx-background-color: #040404FF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TiendaController">
    <children>
-      <Pane prefHeight="75.0" style="-fx-background-color: #313131;">
+      <Pane prefHeight="100.0" style="-fx-background-color: #313131;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="50.0" layoutX="75.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="50.0" layoutX="68.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/logo.png" />
                </image>
@@ -19,11 +21,28 @@
          <children>
             <VBox prefHeight="525.0" style="-fx-background-color: #232323;">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" styleClass="boton-personalizado" text="Biblioteca" textFill="#a100ff" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" text="Tienda" textFill="#a100ff" />
+                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #232323FF;" styleClass="boton-personalizado" text="Biblioteca" textFill="#a100ff">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #232323FF;" text="Tienda" textFill="#a100ff">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
                </children>
             </VBox>
-            <HBox fx:id="videojuegosContainer" prefHeight="300.0" prefWidth="800.0" />
+            <VBox>
+               <HBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </HBox.margin>
+               <children>
+                  <HBox fx:id="videojuegosContainer" prefHeight="1125.0" prefWidth="1700.0" spacing="20.0">
+                     <children>
+
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </children>

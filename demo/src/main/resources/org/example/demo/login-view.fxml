@@ -5,27 +5,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #040404;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<VBox alignment="CENTER" prefHeight="1200.0" prefWidth="1800.0" style="-fx-background-color: #040404;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
   <children>
       <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #313131;">
          <children>
-            <TextField fx:id="id_mail" prefHeight="20.0" prefWidth="300.0" promptText="mail" text="jorgex1412@gmail.com">
+            <TextField fx:id="id_mail" prefHeight="50.0" prefWidth="500.0" promptText="mail" text="jorgex1412@gmail.com">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
                <font>
-                  <Font name="Verdana Bold" size="15.0" />
+                  <Font name="Verdana Bold" size="20.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="id_pass" prefHeight="20.0" prefWidth="300.0" promptText="pass" text="aF2840303">
+            <PasswordField fx:id="id_pass" prefHeight="50.0" prefWidth="500.0" promptText="pass" text="aF2840303">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
                <font>
-                  <Font name="Verdana Bold" size="15.0" />
+                  <Font name="Verdana Bold" size="20.0" />
                </font>
             </PasswordField>
-            <Button mnemonicParsing="false" onAction="#login" prefHeight="20.0" prefWidth="300.0" style="-fx-background-color: #a100ff;" text="Login" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#login" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #a100ff;" text="Login" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="50.0" top="10.0" />
                </VBox.margin>
@@ -35,10 +35,10 @@
             </Button>
          </children>
          <VBox.margin>
-            <Insets left="300.0" right="300.0" />
+            <Insets left="500.0" right="500.0" />
          </VBox.margin>
          <padding>
-            <Insets bottom="200.0" top="100.0" />
+            <Insets bottom="550.0" top="250.0" />
          </padding>
       </VBox>
    </children>

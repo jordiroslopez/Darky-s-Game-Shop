@@ -3,11 +3,8 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import models.Videojuego;
 import org.example.demo.BBDD;
-import javafx.geometry.Insets;
-
 import java.util.ArrayList;
 
 public class TiendaController {
@@ -18,32 +15,27 @@ public class TiendaController {
     public void initialize() throws InterruptedException {
         ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos(0);
 
+        HBox fila = new HBox(10);
+        int contador = 0;
+
         for (Videojuego juego : listaVideojuegos) {
             Button btn = new Button(juego.getNombre_videojuego());
-            btn.setPrefWidth(125);
-            btn.setPrefHeight(200);
-            btn.setStyle("-fx-background-color: #a100ff; -fx-text-fill: white;");
+            btn.setPrefWidth(200);
+            btn.setPrefHeight(300);
+            btn.setStyle("-fx-background-color: #232323FF; -fx-text-fill: white; -fx-font-size: 20.0");
 
-            VBox.setMargin(btn, new Insets(10));
+            fila.getChildren().add(btn);
+            contador++;
 
-            videojuegosContainer.getChildren().add(btn);
+            if (contador == 6) {
+                videojuegosContainer.getChildren().add(fila);
+                fila = new HBox(10);
+                contador = 0;
+            }
+        }
+
+        if (!fila.getChildren().isEmpty()) {
+            videojuegosContainer.getChildren().add(fila);
         }
     }
 }
-
-// IMPRIMIR LISTA DE VIDEOJUEGOS
-        /*
-        for (int i = 0; i < listaVideojuegos.size(); i++) {
-            System.out.println("ID     : " + listaVideojuegos.get(i).getId_videojuego());
-            System.out.println("Nombre : " + listaVideojuegos.get(i).getNombre_videojuego());
-            System.out.println("Precio : " + listaVideojuegos.get(i).getPrecio() + " €");
-            System.out.println("CATEGORIAS");
-
-            for (int j = 0; j < listaVideojuegos.get(i).getCategorias().size(); j++) {
-                System.out.println("- " + listaVideojuegos.get(i).getCategorias().get(j));
-            }
-
-            System.out.println();
-        }
-
-         */
