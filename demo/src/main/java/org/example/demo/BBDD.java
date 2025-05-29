@@ -1,7 +1,11 @@
 package org.example.demo;
 
 import models.Usuario;
+import models.Videojuego;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.Thread.sleep;
 
@@ -54,5 +58,49 @@ public class BBDD {
         }
 
         return false;
+    }
+
+    public static ArrayList<Videojuego> getListaVideojuegos() throws InterruptedException {
+        ArrayList<Videojuego> listaVideojuegos = new ArrayList<>();
+        Connection conexion = BBDD.connect();
+
+        // ESTABLECER VARIABLES VIDEOJUEGOS
+        int id_videojuego = 0;
+        String nombre_videojuego = "";
+        float precio = 0;
+
+        try {
+            // OBTENER VALORES DE VIDEOJUEGO
+            String getVideojuego = "SELECT * FROM videojuego;";
+            PreparedStatement stmt1 = conexion.prepareStatement(getVideojuego);
+            ResultSet rs_videojuego = stmt1.executeQuery();
+
+            while (rs_videojuego.next()) {
+                // ESTABLECER VARIABLES VIDEOJUEGOS
+                List categorias = new ArrayList();
+                id_videojuego = rs_videojuego.getInt("id_videojuego");
+                nombre_videojuego = rs_videojuego.getString("nombre_videojuego");
+                precio = rs_videojuego.getFloat("precio");
+
+                // OBTENER CATEGORIAS DE VIDEOJUEGOS
+                String getCategoria = "SELECT c.nombre_categoria FROM (videojuego v JOIN videojuego_categoria vc JOIN categoria c ON v.id_videojuego = vc.id_videojuego AND vc.id_categoria = c.id_categoria) WHERE v.id_videojuego = " + id_videojuego + ";";
+                PreparedStatement stmt2 = conexion.prepareStatement(getCategoria);
+                ResultSet rs_categoria = stmt2.executeQuery();
+
+                while (rs_categoria.next()) {
+                    String nombreCategoria = rs_categoria.getString("nombre_categoria");
+                    categorias.add(nombreCategoria);
+                }
+
+                // CREARE Y GUARDAR VIDEOJUEGO
+                Videojuego videojuego = new Videojuego(id_videojuego, nombre_videojuego, precio, categorias);
+                listaVideojuegos.add(videojuego);
+            }
+        } catch (SQLException sqle) {
+            System.err.println(sqle.getMessage());
+            sleep(100);
+        }
+
+        return listaVideojuegos;
     }
 }

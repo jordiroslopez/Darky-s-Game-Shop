@@ -1,24 +1,27 @@
 package controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.layout.FlowPane;
+import models.Videojuego;
+import org.example.demo.BBDD;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class TiendaController {
     @FXML
-    public void initialize() {
-        List<String> items = List.of("Juego 1", "Juego 2", "Juego 3", "Juego 4", "Juego 5", "Juego 6", "Juego 7");
+    public void initialize() throws InterruptedException {
+        ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos();
 
-        FlowPane flowPane = new FlowPane();
-        flowPane.setHgap(10);
-        flowPane.setVgap(10);
+        for (int i = 0; i < listaVideojuegos.size(); i++) {
+            System.out.println("ID     : " + listaVideojuegos.get(i).getId_videojuego());
+            System.out.println("Nombre : " + listaVideojuegos.get(i).getNombre_videojuego());
+            System.out.println("Precio : " + listaVideojuegos.get(i).getPrecio() + " €");
+            System.out.println("CATEGORIAS");
 
-        for (String item : items) {
-            Button btn = new Button(item);
-            btn.setPrefSize(100, 150);
-            flowPane.getChildren().add(btn);
+            for (int j = 0; j < listaVideojuegos.get(i).getCategorias().size(); j++) {
+                System.out.println("- " + listaVideojuegos.get(i).getCategorias().get(j));
+            }
+
+            System.out.println();
         }
     }
 }

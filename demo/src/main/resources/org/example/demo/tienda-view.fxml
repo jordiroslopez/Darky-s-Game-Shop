@@ -6,9 +6,9 @@
 
 <VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #040404;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TiendaController">
    <children>
-      <Pane prefHeight="100.0" style="-fx-background-color: #313131;">
+      <Pane prefHeight="75.0" style="-fx-background-color: #313131;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="80.0" layoutX="62.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="50.0" layoutX="75.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/logo.png" />
                </image>
@@ -17,9 +17,9 @@
       </Pane>
       <HBox>
          <children>
-            <VBox prefHeight="500.0" style="-fx-background-color: #232323;">
+            <VBox prefHeight="525.0" style="-fx-background-color: #232323;">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" text="Biblioteca" textFill="#a100ff" styleClass="boton-personalizado"/>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" styleClass="boton-personalizado" text="Biblioteca" textFill="#a100ff" />
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" text="Tienda" textFill="#a100ff" />
                </children>
             </VBox>
