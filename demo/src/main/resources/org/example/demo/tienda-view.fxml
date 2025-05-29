@@ -24,7 +24,7 @@
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" text="Tienda" textFill="#a100ff" />
                </children>
             </VBox>
-            <TableView fx:id="tabla_videojuegos">
+            <TableView fx:id="tabla_videojuegos" disable="true">
               <columns>
                 <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />

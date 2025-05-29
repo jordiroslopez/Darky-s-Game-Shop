@@ -84,11 +84,11 @@ public class BBDD {
 
                 // OBTENER CATEGORIAS DE VIDEOJUEGOS
                 String getCategoria =
-                        "SELECT c.nombre_categoria FROM (videojuego v" +
-                                "JOIN videojuego_categoria vc" +
-                                "JOIN categoria c" +
-                                "ON v.id_videojuego = vc.id_videojuego" +
-                                "AND vc.id_categoria = c.id_categoria)" +
+                        "SELECT c.nombre_categoria FROM (videojuego v " +
+                                "JOIN videojuego_categoria vc " +
+                                "JOIN categoria c " +
+                                "ON v.id_videojuego = vc.id_videojuego " +
+                                "AND vc.id_categoria = c.id_categoria) " +
                                 "WHERE v.id_videojuego = " + id_videojuego + ";";
                 PreparedStatement stmt2 = conexion.prepareStatement(getCategoria);
                 ResultSet rs_categoria = stmt2.executeQuery();
