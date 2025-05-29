@@ -60,7 +60,7 @@ public class BBDD {
         return false;
     }
 
-    public static ArrayList<Videojuego> getListaVideojuegos() throws InterruptedException {
+    public static ArrayList<Videojuego> getListaVideojuegos(int id_usuario) throws InterruptedException {
         ArrayList<Videojuego> listaVideojuegos = new ArrayList<>();
         Connection conexion = BBDD.connect();
 
@@ -68,10 +68,21 @@ public class BBDD {
         int id_videojuego = 0;
         String nombre_videojuego = "";
         float precio = 0;
+        String getVideojuego;
 
         try {
             // QUERY PARA OBTENER VALORES VIDEOJUEGO
-            String getVideojuego = "SELECT * FROM videojuego;";
+            if (id_usuario == 0) {  // OBTENER TODOS LOS JUEGOS
+                getVideojuego = "SELECT * FROM videojuego;";
+            } else {                // OBTENER TODOS LOS JUEGOS DEL USUARIO
+                getVideojuego =
+                        "SELECT * FROM (usuario u " +
+                                "JOIN usuario_videojuego uv " +
+                                "JOIN videojuego v " +
+                                "ON u.id_usuario = uv.id_usuario " +
+                                "AND uv.id_videojuego = v.id_videojuego) " +
+                                "WHERE u.id_usuario = " + id_usuario + ";";
+            }
             PreparedStatement stmt1 = conexion.prepareStatement(getVideojuego);
             ResultSet rs_videojuego = stmt1.executeQuery();
 

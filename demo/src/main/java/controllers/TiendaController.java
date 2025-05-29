@@ -10,7 +10,7 @@ public class TiendaController {
 
     @FXML
     public void initialize() throws InterruptedException {
-        ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos();
+        ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos(0);
 
         // IMPRIMIR LISTA DE VIDEOJUEGOS
         for (int i = 0; i < listaVideojuegos.size(); i++) {
