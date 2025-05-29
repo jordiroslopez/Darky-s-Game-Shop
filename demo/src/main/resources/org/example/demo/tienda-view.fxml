@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #040404;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TiendaController">
+<VBox prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #040404FF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TiendaController">
    <children>
       <Pane prefHeight="75.0" style="-fx-background-color: #313131;">
          <children>
@@ -23,6 +23,7 @@
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #232323FF;" text="Tienda" textFill="#a100ff" />
                </children>
             </VBox>
+            <HBox fx:id="videojuegosContainer" prefHeight="300.0" prefWidth="800.0" />
          </children>
       </HBox>
    </children>
