@@ -70,24 +70,30 @@ public class BBDD {
         float precio = 0;
 
         try {
-            // OBTENER VALORES DE VIDEOJUEGO
+            // QUERY PARA OBTENER VALORES VIDEOJUEGO
             String getVideojuego = "SELECT * FROM videojuego;";
             PreparedStatement stmt1 = conexion.prepareStatement(getVideojuego);
             ResultSet rs_videojuego = stmt1.executeQuery();
 
             while (rs_videojuego.next()) {
-                // ESTABLECER VARIABLES VIDEOJUEGOS
+                // OBTENER VALORES VIDEOJUEGOS CON LA QUERY
                 List categorias = new ArrayList();
                 id_videojuego = rs_videojuego.getInt("id_videojuego");
                 nombre_videojuego = rs_videojuego.getString("nombre_videojuego");
                 precio = rs_videojuego.getFloat("precio");
 
                 // OBTENER CATEGORIAS DE VIDEOJUEGOS
-                String getCategoria = "SELECT c.nombre_categoria FROM (videojuego v JOIN videojuego_categoria vc JOIN categoria c ON v.id_videojuego = vc.id_videojuego AND vc.id_categoria = c.id_categoria) WHERE v.id_videojuego = " + id_videojuego + ";";
+                String getCategoria =
+                        "SELECT c.nombre_categoria FROM (videojuego v" +
+                                "JOIN videojuego_categoria vc" +
+                                "JOIN categoria c" +
+                                "ON v.id_videojuego = vc.id_videojuego" +
+                                "AND vc.id_categoria = c.id_categoria)" +
+                                "WHERE v.id_videojuego = " + id_videojuego + ";";
                 PreparedStatement stmt2 = conexion.prepareStatement(getCategoria);
                 ResultSet rs_categoria = stmt2.executeQuery();
 
-                while (rs_categoria.next()) {
+                while (rs_categoria.next()) { // OBTENER NOMBRES CATEGORIAS
                     String nombreCategoria = rs_categoria.getString("nombre_categoria");
                     categorias.add(nombreCategoria);
                 }
