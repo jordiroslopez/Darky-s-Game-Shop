@@ -6,18 +6,22 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import models.Usuario;
 import models.Videojuego;
 import org.example.demo.BBDD;
 import org.example.demo.SceneManager;
+import org.example.demo.UserSesion;
 
 import java.util.ArrayList;
 
 public class BibliotecaController {
     @FXML
     private VBox videojuegosContainer;
+
     @FXML
     public void initialize() throws InterruptedException {
-        ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos(0);
+        int id_usuario = 1; // OBTENER ID DEL USUARIO ACTUAL
+        ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos(id_usuario);
         int espacio = 20;
 
         HBox fila = new HBox(espacio);
@@ -43,7 +47,8 @@ public class BibliotecaController {
             videojuegosContainer.getChildren().add(fila);
         }
     }
-    public void irABiblioteca(ActionEvent event) {
-        SceneManager.canviarEscena("/org/example/demo/biblioteca-view.fxml", "Biblioteca", event);
+
+    public void irATienda(ActionEvent event) {
+        SceneManager.canviarEscena("/org/example/demo/tienda-view.fxml", "Tienda", event);
     }
 }

@@ -2,7 +2,6 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -44,6 +43,7 @@ public class TiendaController {
             videojuegosContainer.getChildren().add(fila);
         }
     }
+
     public void irABiblioteca(ActionEvent event) {
         SceneManager.canviarEscena("/org/example/demo/biblioteca-view.fxml", "Biblioteca", event);
     }

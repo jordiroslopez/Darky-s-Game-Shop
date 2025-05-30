@@ -32,6 +32,10 @@ public class Usuario extends UserSesion {
         this.contrasena = contrasena;
     }
 
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
     public String getEmail() {
         return email;
     }
