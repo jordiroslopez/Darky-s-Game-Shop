@@ -5,11 +5,13 @@ import javafx.beans.property.SimpleObjectProperty;
 import models.Usuario;
 
 public class UserSesion {
-    public UserSesion() {}
-
-    private static final ObjectProperty<UserSesion> usuarioActual = new SimpleObjectProperty<>();
+    private static final ObjectProperty<Usuario> usuarioActual = new SimpleObjectProperty<>();
 
     public static void setUser(Usuario usuario) {
         usuarioActual.set(usuario);
+    }
+
+    public static ObjectProperty<Usuario> usuarioActualProperty() {
+        return usuarioActual;
     }
 }

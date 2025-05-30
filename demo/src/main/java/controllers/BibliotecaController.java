@@ -1,8 +1,8 @@
 package controllers;
 
+import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,7 +20,10 @@ public class BibliotecaController {
 
     @FXML
     public void initialize() throws InterruptedException {
-        int id_usuario = 1; // OBTENER ID DEL USUARIO ACTUAL
+        // OBTENER ID DEL USUARIO ACTUAL
+        ObjectProperty<Usuario> usuario = UserSesion.usuarioActualProperty();
+        int id_usuario = UserSesion.usuarioActualProperty().get().getId_usuario();
+
         ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos(id_usuario);
         int espacio = 20;
 
