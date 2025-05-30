@@ -12,10 +12,9 @@ import org.example.demo.SceneManager;
 
 import java.util.ArrayList;
 
-public class TiendaController {
+public class BibliotecaController {
     @FXML
     private VBox videojuegosContainer;
-
     @FXML
     public void initialize() throws InterruptedException {
         ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos(0);
