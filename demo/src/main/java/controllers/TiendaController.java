@@ -44,7 +44,13 @@ public class TiendaController {
         }
     }
 
+    // CARGAR VENTANA BIBLIOTECA
     public void irABiblioteca(ActionEvent event) {
         SceneManager.canviarEscena("/org/example/demo/biblioteca-view.fxml", "Biblioteca", event);
+    }
+
+    // CARGAR VENTANA LOGOUT
+    public void LogOut(ActionEvent event) {
+        SceneManager.canviarEscena("/org/example/demo/login-view.fxml", "Login", event);
     }
 }

@@ -15,6 +15,11 @@
                   <Image url="@img/logo.png" />
                </image>
             </ImageView>
+            <Button fx:id="logout" onAction="#LogOut" layoutX="1707.0" layoutY="7.0" mnemonicParsing="false" style="-fx-background-color: #313131;" text="LogOut" textFill="#a100ff">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <HBox>
