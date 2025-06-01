@@ -9,21 +9,21 @@ public class Usuario extends UserSesion {
     private String email;
     private Videojuego[] videojuegos;
 
-    // CONSTRUCTOR CON TODOS LOS ATRIBUTOS
-    public Usuario(int id_usuario, String nombre_usuario, String contrasena, String email, Videojuego[] videojuegos) {
-        this.id_usuario = id_usuario;
-        this.nombre_usuario = nombre_usuario;
-        this.contrasena = contrasena;
-        this.email = email;
-        this.videojuegos = videojuegos;
-    }
-
     // CONSTRUCTOR SIN LISTA DE VIDEOJUEGOS
     public Usuario(int id_usuario, String nombre_usuario, String contrasena, String email) {
         this.id_usuario = id_usuario;
         this.nombre_usuario = nombre_usuario;
         this.contrasena = contrasena;
         this.email = email;
+    }
+
+    // CONSTRUCTOR CON TODOS LOS ATRIBUTOS
+    public Usuario(String nombre_usuario, String contrasena, String email) {
+        this.id_usuario = id_usuario;
+        this.nombre_usuario = nombre_usuario;
+        this.contrasena = contrasena;
+        this.email = email;
+        this.videojuegos = videojuegos;
     }
 
     // CONSTRUCTOR SOLO CON EMAIL Y CONTRASEÑA
@@ -34,6 +34,10 @@ public class Usuario extends UserSesion {
 
     public int getId_usuario() {
         return id_usuario;
+    }
+
+    public String getNombre_usuario() {
+        return nombre_usuario;
     }
 
     public String getEmail() {

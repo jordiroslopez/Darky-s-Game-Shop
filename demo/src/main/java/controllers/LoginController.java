@@ -22,4 +22,9 @@ public class LoginController {
             SceneManager.canviarEscena("/org/example/demo/tienda-view.fxml", "Tienda", event);
         }
     }
+
+    @FXML
+    public void signin(ActionEvent event) {
+        SceneManager.canviarEscena("/org/example/demo/signin-view.fxml", "SignIn", event);
+    }
 }

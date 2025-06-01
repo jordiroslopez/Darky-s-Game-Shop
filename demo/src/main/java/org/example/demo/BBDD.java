@@ -60,6 +60,56 @@ public class BBDD {
         return false;
     }
 
+    public static boolean signin(String nombre_usuario, String contrasena, String email) throws InterruptedException {
+        Connection conexion = BBDD.connect();
+
+        if (conexion != null) {
+            String query = "SELECT * FROM usuario WHERE email = ?;"; // BUSCAR USUARIOS CON EL MISMO EMAIL
+
+            try (PreparedStatement stmt1 = conexion.prepareStatement(query)) {
+                stmt1.setString(1, email);
+                ResultSet rs = stmt1.executeQuery();
+                if (rs.next()) { // BUSCAR SI EL USUARIO EXISTE
+                    return false;
+                } else { // SI EL USUARIO NO EXISTE REGISTRARLO
+                    String insert = "INSERT INTO usuario (nombre_usuario, contrasena, email) VALUES (?, ?, ?);";
+
+                    try (PreparedStatement stmt2 = conexion.prepareStatement(insert)) {
+                        stmt2.setString(1, nombre_usuario);
+                        stmt2.setString(2, contrasena);
+                        stmt2.setString(3, email);
+                        stmt2.executeUpdate(); // GENERAR NUEVO USUARIO EN LA BASE DE DATOS
+
+                        String query2 = "SELECT id_usuario FROM usuario WHERE email = ?;"; // BUSCAR USUARIO EN LA BASE DE DATOS
+
+                        try (PreparedStatement stmt3 = conexion.prepareStatement(query2)) {
+                            stmt3.setString(1, email);
+                            ResultSet rs2 = stmt3.executeQuery();
+
+                            if (rs2.next()) {
+                                int id_usuario = rs2.getInt("id_usuario"); // OBTENER ID DEL USUARIO EN LA BASE DE DATOS
+                                Usuario usuario = new Usuario(id_usuario, nombre_usuario, contrasena, email);
+                                UserSesion.setUser(usuario); // REGISTRAR COMO USUARIO ACTUAL
+                                return true;
+                            }
+                        } catch (SQLException sqe) {
+                            System.err.println(sqe.getMessage());
+                            sleep(100);
+                        }
+                    } catch (SQLException sqle) {
+                        System.err.println(sqle.getMessage());
+                        sleep(100);
+                    }
+                }
+            } catch (SQLException e) {
+                System.err.println(e.getMessage());
+                sleep(100);
+            }
+        }
+
+        return false;
+    }
+
     public static ArrayList<Videojuego> getListaVideojuegos(int id_usuario) throws InterruptedException {
         ArrayList<Videojuego> listaVideojuegos = new ArrayList<>();
         Connection conexion = BBDD.connect();
