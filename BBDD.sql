@@ -1,7 +1,6 @@
-/*
+DROP DATABASE IF EXISTS DarkysGamesShop;
 CREATE DATABASE DarkysGamesShop;
 USE DarkysGamesShop;
-*/
 
 -- ELIMINACION DE TABLAS
 DROP TABLE IF EXISTS Videojuego_Categoria;
@@ -35,7 +34,8 @@ CREATE TABLE Usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre_usuario VARCHAR(50),
     contrasena VARCHAR(50),
-    email VARCHAR(50)
+    email VARCHAR(50),
+    esAdmin BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE Usuario_Videojuego (
@@ -48,31 +48,5 @@ CREATE TABLE Usuario_Videojuego (
 -- FIN CREACION DE TABLAS
 
 -- INSERTS DE PRUEBA
-INSERT INTO Videojuego (nombre_videojuego, precio) VALUES
-("Portal 2", 9.75);
-
-INSERT INTO Categoria (nombre_categoria) VALUES
-("Plataformas"),
-("Puzles"),
-("Primera persona"),
-("Divertidos");
-
-INSERT INTO Videojuego_Categoria VALUES
-(1, 1), -- Portal 2 | Plataformas
-(1, 2), -- Portal 2 | Puzles
-(1, 3), -- Portal 2 | Primera Persona
-(1, 4); -- Portal 2 | Divertidos
-
-INSERT INTO Usuario (nombre_usuario, contrasena, email) VALUES
-("Darky485", "aF2840303", "jorgex1412@gmail.com");
-
-INSERT INTO Usuario_Videojuego VALUES (1, 1); -- Darky485 | Portal 2
--- FIN DE INSERTS DE PRUEBA
-
-/*
-ALTER TABLE categoria AUTO_INCREMENT = 1;
-ALTER TABLE videojuego AUTO_INCREMENT = 1;
-ALTER TABLE usuario AUTO_INCREMENT = 1;
-ALTER TABLE videojuego_categoria AUTO_INCREMENT = 1;
-ALTER TABLE usuario_videojuego AUTO_INCREMENT = 1;
-*/
+INSERT INTO Usuario (nombre_usuario, contrasena, email, esAdmin) VALUES
+    ("admin", "admin", "admin@gmail.com", TRUE);
