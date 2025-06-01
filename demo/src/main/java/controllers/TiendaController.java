@@ -30,6 +30,7 @@ public class TiendaController {
             btn.setStyle("-fx-background-color: #232323FF; -fx-text-fill: white; -fx-font-size: 20.0;");
 
             fila.getChildren().add(btn);
+            fila.setStyle("-fx-background-color: rgba(0,0,0,0.99);");
             contador++;
 
             if (contador == 6) {
@@ -49,7 +50,7 @@ public class TiendaController {
         SceneManager.canviarEscena("/org/example/demo/biblioteca-view.fxml", "Biblioteca", event);
     }
 
-    // CARGAR VENTANA LOGOUT
+    // CARGAR VENTANA LOGIN
     public void LogOut(ActionEvent event) {
         SceneManager.canviarEscena("/org/example/demo/login-view.fxml", "Login", event);
     }

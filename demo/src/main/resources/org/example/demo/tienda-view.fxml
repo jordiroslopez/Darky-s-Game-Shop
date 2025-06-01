@@ -41,7 +41,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </HBox.margin>
                <children>
-                  <ScrollPane fitToWidth="true" prefHeight="1125.0" prefWidth="1700.0">
+                  <ScrollPane fitToWidth="true" prefHeight="1125.0" prefWidth="1700.0" style="-fx-background-color: transparent;">
                      <content>
                         <VBox fx:id="videojuegosContainer" spacing="20.0" />
                      </content>
