@@ -15,7 +15,7 @@
                   <Image url="@img/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="logout" layoutX="1687.0" layoutY="10.0" mnemonicParsing="false" onAction="#LogOut" style="-fx-background-color: #313131;" text="LogOut" textFill="#a100ff">
+            <Button fx:id="logout" layoutX="1626.0" layoutY="9.0" mnemonicParsing="false" onAction="#LogOut" style="-fx-background-color: #313131;" text="Cerrar sesión" textFill="#a100ff">
                <font>
                   <Font name="Verdana" size="20.0" />
                </font>
