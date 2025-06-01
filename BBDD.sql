@@ -1,3 +1,4 @@
+-- CREACION DE BASE DE DATOS
 DROP DATABASE IF EXISTS DarkysGamesShop;
 CREATE DATABASE DarkysGamesShop;
 USE DarkysGamesShop;
@@ -5,21 +6,28 @@ USE DarkysGamesShop;
 -- ELIMINACION DE TABLAS
 DROP TABLE IF EXISTS Videojuego_Categoria;
 DROP TABLE IF EXISTS Usuario_Videojuego;
-DROP TABLE IF EXISTS Categoria;
-DROP TABLE IF EXISTS Videojuego;
 DROP TABLE IF EXISTS Usuario;
--- FIN ELIMINACION DE TABLAS
+DROP TABLE IF EXISTS Videojuego;
+DROP TABLE IF EXISTS Categoria;
 
 -- CREACION DE TABLAS
-CREATE TABLE Categoria (
-    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_categoria VARCHAR(50) UNIQUE
+CREATE TABLE Usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_usuario VARCHAR(50),
+    contrasena VARCHAR(50),
+    email VARCHAR(50),
+    esAdmin BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE Videojuego (
     id_videojuego INT AUTO_INCREMENT PRIMARY KEY,
     nombre_videojuego VARCHAR(50),
     precio FLOAT
+);
+
+CREATE TABLE Categoria (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_categoria VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE Videojuego_Categoria (
@@ -30,14 +38,6 @@ CREATE TABLE Videojuego_Categoria (
     CONSTRAINT FK2_Categoria FOREIGN KEY(id_categoria) REFERENCES Categoria(id_categoria)
 );
 
-CREATE TABLE Usuario (
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_usuario VARCHAR(50),
-    contrasena VARCHAR(50),
-    email VARCHAR(50),
-    esAdmin BOOLEAN DEFAULT FALSE
-);
-
 CREATE TABLE Usuario_Videojuego (
     id_usuario INT,
     id_videojuego INT,
@@ -45,12 +45,12 @@ CREATE TABLE Usuario_Videojuego (
     CONSTRAINT FK1_Usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
     CONSTRAINT FK2_Videojuego FOREIGN KEY (id_videojuego) REFERENCES Videojuego(id_videojuego)
 );
--- FIN CREACION DE TABLAS
 
--- INSERTS DE PRUEBA
+-- INSERTAR USUARIO ADMIN
 INSERT INTO Usuario (nombre_usuario, contrasena, email, esAdmin) VALUES
     ("admin", "admin", "admin@gmail.com", TRUE);
 
+-- INSERTAR LISTA DE VIDEOJUEGOS
 INSERT INTO videojuego (nombre_videojuego, precio) VALUES
     ("EA SPORTS FC™ 25 Standard Edition", 69.99),
     ("Grand Theft Auto V: Premium Edition", 29.99),
@@ -96,3 +96,73 @@ INSERT INTO videojuego (nombre_videojuego, precio) VALUES
     ("Thank Goodness You're Here", 14.00),
     ("UFO 50", 20.00),
     ("Viewfinder", 12.49);
+
+-- INSERTAR LISTA DE CATEGORIAS
+INSERT INTO Categoria (nombre_categoria) VALUES
+    ("Acción"),
+    ("Aventura"),
+    ("Plataforma"),
+    ("RPG"),
+    ("Shooter"),
+    ("Mundo Abierto"),
+    ("Estrategia"),
+    ("Simulación"),
+    ("Multijugador"),
+    ("Cooperativo"),
+    ("Deportes"),
+    ("Carreras"),
+    ("Terror"),
+    ("Survival Horror"),
+    ("Puzzle"),
+    ("Ciencia Ficción"),
+    ("Fantasía"),
+    ("Indie"),
+    ("Narrativo"),
+    ("Stealth"),
+    ("Beat 'em up"),
+    ("Metroidvania");
+
+-- RELACIONAR VIDEOJUEGO CON CATEGORIA
+INSERT INTO Videojuego_Categoria VALUES
+-- ACCION
+(3, 1),  -- GOW
+(19, 1), -- R&C
+(2, 1),  -- GTA V
+
+-- RPG
+(23, 4), -- CP2077
+(14, 4), -- FF XVI
+(34, 4), -- SMT V
+
+-- SHOOTER
+(6, 5), -- BF 2042
+(24, 5), -- R II
+(5, 5), -- SM 2
+
+-- MULTIJUGADOR / COOPERATIVO
+(4, 9), -- DBD
+(4, 10), -- DBD
+(20, 9), -- ITT
+(20, 10), -- ITT
+
+-- TERROR / SURVIVAL HORROR
+(32, 13), -- RE 4
+(32, 14), -- RE 4
+(35, 13), -- SH 2
+(35, 14), -- SH 2
+(7, 13), -- AW 2
+(7, 14), -- AW 2
+
+-- PUZZLE / NARRATIVO
+(37, 15), -- TSP
+(37, 19), -- TSP
+(44, 15), -- VF
+(44, 19), -- VF
+
+-- ESTRATEGIA / SIMULACION
+(15, 7), -- C VI
+(15, 8), -- C VI
+(18, 7), -- Sat
+(18, 8), -- Sat
+(21, 7), -- FM 2024
+(21, 8); -- FM 2024

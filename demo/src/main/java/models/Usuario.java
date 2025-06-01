@@ -19,16 +19,6 @@ public class Usuario extends UserSesion {
         this.esAdmin = esAdmin;
     }
 
-    // CONSTRUCTOR CON TODOS LOS ATRIBUTOS
-    public Usuario(String nombre_usuario, String contrasena, String email, boolean esAdmin) {
-        this.id_usuario = id_usuario;
-        this.nombre_usuario = nombre_usuario;
-        this.contrasena = contrasena;
-        this.email = email;
-        this.videojuegos = videojuegos;
-        this.esAdmin = esAdmin;
-    }
-
     // CONSTRUCTOR SOLO CON EMAIL Y CONTRASEÑA
     public Usuario(String email, String contrasena) {
         this.email = email;
