@@ -9,7 +9,12 @@
     <children>
         <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #313131;">
             <children>
-                <TextField fx:id="id_mail" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="email">
+            <TextField fx:id="id_username" prefHeight="50.0" prefWidth="500.0" promptText="Nombre de usuario">
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
+            </TextField>
+                <TextField fx:id="id_mail" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="Email">
                     <VBox.margin>
                         <Insets top="10.0" />
                     </VBox.margin>
@@ -17,7 +22,7 @@
                         <Font name="Verdana Bold" size="20.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="id_pass" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="contraseña">
+                <PasswordField fx:id="id_pass" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="Contraseña">
                     <VBox.margin>
                         <Insets top="10.0" />
                     </VBox.margin>
@@ -25,7 +30,15 @@
                         <Font name="Verdana Bold" size="20.0" />
                     </font>
                 </PasswordField>
-                <Button mnemonicParsing="false" onAction="#signin" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #a100ff;" text="Iniciar sesión" textFill="WHITE">
+            <PasswordField fx:id="id_pass2" prefHeight="50.0" prefWidth="500.0" promptText="Repetir contraseña">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
+            </PasswordField>
+                <Button mnemonicParsing="false" onAction="#signin" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #a100ff;" text="Crear cuenta" textFill="WHITE">
                     <VBox.margin>
                         <Insets bottom="50.0" top="10.0" />
                     </VBox.margin>
@@ -33,26 +46,12 @@
                         <Font name="Verdana Bold" size="20.0" />
                     </font>
                 </Button>
-                <Pane prefHeight="100.0" prefWidth="500.0">
-                    <children>
-                        <Label layoutX="141.0" layoutY="8.0" text="No tienes cuenta de usuario?" textFill="WHITE">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                        </Label>
-                        <Button layoutX="178.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: #313131;" text="Crear tu cuenta" textFill="#a100ff" textOverrun="CLIP" underline="true">
-                            <font>
-                                <Font name="System Bold" size="17.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </Pane>
             </children>
             <VBox.margin>
                 <Insets left="500.0" right="500.0" />
             </VBox.margin>
             <padding>
-                <Insets bottom="200.0" top="250.0" />
+                <Insets bottom="190.0" top="250.0" />
             </padding>
         </VBox>
     </children>

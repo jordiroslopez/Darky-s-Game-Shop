@@ -40,7 +40,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Button layoutX="177.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: #313131;" text="Crear tu cuenta" textFill="#a100ff">
+                  <Button layoutX="177.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: #313131;" text="Crear tu cuenta" textFill="#a100ff" underline="true">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
