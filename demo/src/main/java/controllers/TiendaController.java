@@ -20,6 +20,7 @@ public class TiendaController {
         ArrayList<Videojuego> listaVideojuegos = BBDD.getListaVideojuegos(0);
         int espacio = 20;
 
+        VBox contenedor = videojuegosContainer;
         HBox fila = new HBox(espacio);
         int contador = 0;
 
@@ -30,18 +31,19 @@ public class TiendaController {
             btn.setStyle("-fx-background-color: #232323FF; -fx-text-fill: white; -fx-font-size: 20.0;");
 
             fila.getChildren().add(btn);
-            fila.setStyle("-fx-background-color: rgba(0,0,0,0.99);");
+            fila.setStyle("-fx-background-color: #040404FF");
             contador++;
 
             if (contador == 6) {
-                videojuegosContainer.getChildren().add(fila);
+                contenedor.getChildren().add(fila);
                 fila = new HBox(espacio);
                 contador = 0;
             }
         }
 
         if (!fila.getChildren().isEmpty()) {
-            videojuegosContainer.getChildren().add(fila);
+            contenedor.setStyle("-fx-background-color: #040404FF");
+            contenedor.getChildren().add(fila);
         }
     }
 
