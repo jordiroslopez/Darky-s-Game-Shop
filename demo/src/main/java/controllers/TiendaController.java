@@ -27,7 +27,7 @@ public class TiendaController {
             Button btn = new Button(juego.getNombre_videojuego());
             btn.setPrefWidth(200);
             btn.setPrefHeight(300);
-            btn.setStyle("-fx-background-color: #232323FF; -fx-text-fill: white; -fx-font-size: 20.0");
+            btn.setStyle("-fx-background-color: #232323FF; -fx-text-fill: white; -fx-font-size: 20.0;");
 
             fila.getChildren().add(btn);
             contador++;

@@ -41,11 +41,11 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                </HBox.margin>
                <children>
-                  <VBox fx:id="videojuegosContainer" prefHeight="1125.0" prefWidth="1700.0" spacing="20.0">
-                     <children>
-
-                     </children>
-                  </VBox>
+                  <ScrollPane fitToWidth="true" prefHeight="1125.0" prefWidth="1700.0">
+                     <content>
+                        <VBox fx:id="videojuegosContainer" spacing="20.0" />
+                     </content>
+                  </ScrollPane>
                </children>
             </VBox>
          </children>
