@@ -46,7 +46,7 @@ public class BBDD {
                     String nombreUsuario = rs.getString("nombre_usuario");
                     String contrasena = rs.getString("contrasena");
                     String email = rs.getString("email");
-                    UserSesion.setUser(new Usuario(id_usuario, nombreUsuario, contrasena, email));
+                    UserSesion.setUser(new Usuario(id_usuario, nombreUsuario, contrasena, email, false));
                     return true;
                 } else {
                     return false;
@@ -88,7 +88,7 @@ public class BBDD {
 
                             if (rs2.next()) {
                                 int id_usuario = rs2.getInt("id_usuario"); // OBTENER ID DEL USUARIO EN LA BASE DE DATOS
-                                Usuario usuario = new Usuario(id_usuario, nombre_usuario, contrasena, email);
+                                Usuario usuario = new Usuario(id_usuario, nombre_usuario, contrasena, email, false);
                                 UserSesion.setUser(usuario); // REGISTRAR COMO USUARIO ACTUAL
                                 return true;
                             }
