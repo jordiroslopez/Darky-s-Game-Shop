@@ -15,19 +15,7 @@ public class Videojuego {
         this.categorias = categorias;
     }
 
-    public int getId_videojuego() {
-        return id_videojuego;
-    }
-
     public String getNombre_videojuego() {
         return nombre_videojuego;
-    }
-
-    public float getPrecio() {
-        return precio;
-    }
-
-    public List getCategorias() {
-        return categorias;
     }
 }
