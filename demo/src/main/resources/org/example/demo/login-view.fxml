@@ -9,6 +9,14 @@
   <children>
       <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #313131;">
          <children>
+            <Label fx:id="lbl_error" text="Email o contraseña incorrectos" textFill="#ff0053" visible="false">
+               <font>
+                  <Font name="Verdana" size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
             <TextField fx:id="id_mail" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="email">
                <VBox.margin>
                   <Insets top="10.0" />
@@ -40,7 +48,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Button onAction="#signin" layoutX="177.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: #313131;" text="Crear tu cuenta" textFill="#a100ff" underline="true">
+                  <Button layoutX="177.0" layoutY="34.0" mnemonicParsing="false" onAction="#signin" style="-fx-background-color: #313131;" text="Crear tu cuenta" textFill="#a100ff" underline="true">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>

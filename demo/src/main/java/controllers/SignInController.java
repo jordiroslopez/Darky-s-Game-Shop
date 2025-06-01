@@ -24,7 +24,7 @@ public class SignInController {
     public void signin(ActionEvent event) throws InterruptedException {
         if (id_pass.getText().equals(id_pass2.getText())) {
             if (BBDD.signin(id_username.getText(), id_pass.getText(), id_mail.getText())) { // VERIFICAR QUE EL USUARIO NO EXISTE Y CREAR CUENTA
-                SceneManager.canviarEscena("/org/example/demo/tienda-view.fxml", "Tienda", event);
+                SceneManager.canviarEscena("/org/example/demo/tienda-view.fxml", event);
             }
         }
     }

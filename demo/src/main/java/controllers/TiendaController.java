@@ -49,11 +49,11 @@ public class TiendaController {
 
     // CARGAR VENTANA BIBLIOTECA
     public void irABiblioteca(ActionEvent event) {
-        SceneManager.canviarEscena("/org/example/demo/biblioteca-view.fxml", "Biblioteca", event);
+        SceneManager.canviarEscena("/org/example/demo/biblioteca-view.fxml", event);
     }
 
     // CARGAR VENTANA LOGIN
     public void LogOut(ActionEvent event) {
-        SceneManager.canviarEscena("/org/example/demo/login-view.fxml", "Login", event);
+        SceneManager.canviarEscena("/org/example/demo/login-view.fxml", event);
     }
 }
