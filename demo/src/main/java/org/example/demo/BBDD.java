@@ -126,12 +126,10 @@ public class BBDD {
                 getVideojuego = "SELECT * FROM videojuego;";
             } else {                // OBTENER TODOS LOS JUEGOS DEL USUARIO
                 getVideojuego =
-                        "SELECT * FROM (usuario u " +
-                                "JOIN usuario_videojuego uv " +
+                        "SELECT * FROM (usuario_videojuego uv " +
                                 "JOIN videojuego v " +
-                                "ON u.id_usuario = uv.id_usuario " +
-                                "AND uv.id_videojuego = v.id_videojuego) " +
-                                "WHERE u.id_usuario = " + id_usuario + ";";
+                                "ON uv.id_videojuego = v.id_videojuego) " +
+                                "WHERE uv.id_usuario = " + id_usuario + ";";
             }
             PreparedStatement stmt1 = conexion.prepareStatement(getVideojuego);
             ResultSet rs_videojuego = stmt1.executeQuery();
@@ -145,12 +143,10 @@ public class BBDD {
 
                 // OBTENER CATEGORIAS DE VIDEOJUEGOS
                 String getCategoria =
-                        "SELECT c.nombre_categoria FROM (videojuego v " +
-                                "JOIN videojuego_categoria vc " +
+                        "SELECT c.nombre_categoria FROM (videojuego_categoria vc " +
                                 "JOIN categoria c " +
-                                "ON v.id_videojuego = vc.id_videojuego " +
-                                "AND vc.id_categoria = c.id_categoria) " +
-                                "WHERE v.id_videojuego = " + id_videojuego + ";";
+                                "ON vc.id_categoria = c.id_categoria) " +
+                                "WHERE vc.id_videojuego = " + id_videojuego + ";";
                 PreparedStatement stmt2 = conexion.prepareStatement(getCategoria);
                 ResultSet rs_categoria = stmt2.executeQuery();
 

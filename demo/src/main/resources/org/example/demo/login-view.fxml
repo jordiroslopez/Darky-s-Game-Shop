@@ -9,7 +9,7 @@
   <children>
       <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #313131;">
          <children>
-            <Label fx:id="lbl_error" text="Email o contraseña incorrectos" textFill="#ff0053" visible="false">
+            <Label fx:id="lbl_error" text="Email o contraseña incorrectos" textAlignment="CENTER" textFill="#ff0053" visible="false">
                <font>
                   <Font name="Verdana" size="17.0" />
                </font>
