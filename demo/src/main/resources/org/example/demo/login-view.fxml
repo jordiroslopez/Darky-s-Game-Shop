@@ -17,15 +17,15 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="id_mail" text="admin@gmail.com" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="email">
+            <TextField fx:id="id_mail" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="email" text="admin@gmail.com">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="25.0" />
                </VBox.margin>
                <font>
                   <Font name="Verdana Bold" size="20.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="id_pass" text="admin" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="contraseña">
+            <PasswordField fx:id="id_pass" focusTraversable="false" prefHeight="50.0" prefWidth="500.0" promptText="contraseña" text="admin">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -60,7 +60,7 @@
             <Insets left="500.0" right="500.0" />
          </VBox.margin>
          <padding>
-            <Insets bottom="200.0" top="250.0" />
+            <Insets bottom="204.0" top="250.0" />
          </padding>
       </VBox>
    </children>

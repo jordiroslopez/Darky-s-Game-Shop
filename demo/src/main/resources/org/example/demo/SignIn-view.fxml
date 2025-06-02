@@ -9,6 +9,21 @@
     <children>
         <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #313131;">
             <children>
+            <Pane prefHeight="50.0" prefWidth="500.0">
+               <children>
+                  <Button layoutY="-2.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #313131;" text="&lt;Atras" textFill="#686868">
+                     <font>
+                        <Font name="Verdana" size="17.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+            <Pane prefHeight="50.0" prefWidth="500.0">
+               <children>
+                  <Label layoutX="186.0" fx:id="lbl_error" layoutY="12.0" text="Mensaje de error" textFill="#ff0053" visible="false">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+               </children></Pane>
             <TextField fx:id="id_username" prefHeight="50.0" prefWidth="500.0" promptText="Nombre de usuario">
                <font>
                   <Font name="Verdana Bold" size="20.0" />
@@ -51,7 +66,7 @@
                 <Insets left="500.0" right="500.0" />
             </VBox.margin>
             <padding>
-                <Insets bottom="190.0" top="250.0" />
+                <Insets bottom="190.0" top="200.0" />
             </padding>
         </VBox>
     </children>
