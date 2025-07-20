@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -9,6 +10,13 @@
   <children>
       <VBox alignment="CENTER" fillWidth="false" style="-fx-background-color: #313131;">
          <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></ImageView>
             <Label fx:id="lbl_error" text="Email o contraseña incorrectos" textAlignment="CENTER" textFill="#ff0053" visible="false">
                <font>
                   <Font name="Verdana" size="17.0" />
