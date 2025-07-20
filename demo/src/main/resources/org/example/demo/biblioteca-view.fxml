@@ -10,7 +10,7 @@
     <children>
         <Pane prefHeight="100.0" style="-fx-background-color: #313131;">
             <children>
-                <ImageView fitHeight="150.0" fitWidth="50.0" layoutX="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="58.0" fitWidth="45.0" layoutX="65.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@img/logo.png" />
                     </image>
@@ -26,7 +26,7 @@
             <children>
                 <VBox prefWidth="175.0" style="-fx-background-color: #232323;">
                     <children>
-                        <Button fx:id="id_tienda" onAction="#irATienda" mnemonicParsing="false" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #232323;" text="Tienda" textFill="#a100ff">
+                        <Button fx:id="id_tienda" mnemonicParsing="false" onAction="#irATienda" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #232323;" text="Tienda" textFill="#a100ff">
                             <font>
                                 <Font size="20.0" />
                             </font></Button>
