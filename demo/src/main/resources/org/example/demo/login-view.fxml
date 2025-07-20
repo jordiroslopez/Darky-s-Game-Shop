@@ -51,12 +51,12 @@
             </Button>
             <Pane prefHeight="100.0" prefWidth="500.0">
                <children>
-                  <Label layoutX="141.0" layoutY="8.0" text="No tienes cuenta de usuario?" textFill="WHITE">
+                  <Label layoutX="69.0" layoutY="1.0" text="No tienes cuenta de usuario?" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Button layoutX="177.0" layoutY="34.0" mnemonicParsing="false" onAction="#signin" style="-fx-background-color: #313131;" text="Crear tu cuenta" textFill="#a100ff" underline="true">
+                  <Button layoutX="287.0" layoutY="-5.0" mnemonicParsing="false" onAction="#signin" style="-fx-background-color: #313131;" text="Crear tu cuenta" textFill="#a100ff" underline="true">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
